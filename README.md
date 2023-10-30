@@ -1,16 +1,35 @@
-### Hi there 👋
+class Trent:
+    def __init__(self, name, age, interests, browser, operating_system, socials):
+        self.name = name
+        self.age = age
+        self.interests = interests
+        self.browser = browser
+        self.operating_system = operating_system
+        self.socials = socials
 
-<!--
-**M3nnis/M3nnis** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+    def generate_bio(self):
+        bio = "Name: {}\n".format(self.name)
+        bio += "Age: {}\n".format(self.age)
+        bio += "Interests: {}\n".format(", ".join(self.interests))
+        bio += "Browser: {}\n".format(self.browser)
+        bio += "Operating System: {}\n".format(self.operating_system)
+        bio += "Socials: \n"
+        for platform, username in self.socials.items():
+            bio += "{}: {}\n".format(platform.capitalize(), username)
+        return bio
 
-Here are some ideas to get you started:
+# Define Information
+name = "Trent"
+age = 15
+interests = ["Gaming", "Computers", "Keyboard", "Mice"]
+browser = "Chrome"
+operating_system = "Windows"
+socials = {
+    "Email": "m3nnis0@gmail.com",
+    "Discord": "https://discord.gg/x8xnhbpYFt"
+}
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+# Create bio
+trent = Trent(name, age, interests, browser, operating_system, socials)
+bio = trent.generate_bio()
+print(bio)
